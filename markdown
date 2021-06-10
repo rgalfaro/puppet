@@ -9,6 +9,10 @@
     echo "Hello world"
 ```
 
+```python
+    print (something)
+```
+
 - [x] @mentions, #refs, [links](), **formatting**, and <del>tags</del> supported, also ~~this one~~
 - [x] list syntax required (any unordered or ordered list supported)
 - [x] this is a complete item
