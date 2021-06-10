@@ -4,13 +4,10 @@
 
 ### This is title 3
 **This is code:**
+
 ```bash
     #!/bin/bash
     echo "Hello world"
-```
-
-```python
-    print (something)
 ```
 
 - [x] @mentions, #refs, [links](), **formatting**, and <del>tags</del> supported, also ~~this one~~
