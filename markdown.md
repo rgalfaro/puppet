@@ -5,9 +5,14 @@
 ### This is title 3
 **This is code:**
 
+  ### **Bash code:**
 ```bash
     #!/bin/bash
     echo "Hello world"
+```
+  ### **Python code:**
+```python
+    print(Hello there!)
 ```
 
 - [x] @mentions, #refs, [links](), **formatting**, and <del>tags</del> supported, also ~~this one~~
