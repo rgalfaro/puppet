@@ -1,5 +1,5 @@
 file { '/tmp/hello.txt':
 	ensure => present,
-	content => "Hello, World!\n",
+	content => "Hello, Worldly fucking world!\n",
 
 }
