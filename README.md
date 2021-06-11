@@ -29,3 +29,28 @@ So you will need set the branch upstream to the _origin_ branch: ``git branch --
 Then you are good to go, with no issue, to pull from _origin main_ branch to the local repo, using ``git pull origin main`` (maybe you can use  ``git pull --rebase`` just in case...)
 
 ## From now on, lets say we get no issues... :smiley:
+
+# Adding SSH keys for not getting prompete every single time for user and password... 
+
+1. You need to create public on the Vagrant server or whenever you are using your local repo with ``ssh-keygen``, check [Github - SSH Auth](https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent#about-ssh-key-generation) for more information...
+2. Then, add the public key to your github account under your profile...
+3. Make sure your remote origin is poiting to the SSH and not to the HTTPs link from your github repo: ``git remote show origin``, that should show something like 
+
+```
+Warning: Permanently added the RSA host key for IP address '140.82.113.3' to the list of known hosts.``
+ * remote origin
+  Fetch URL: git+ssh://git@github.com/your_git_user/your_repo.git
+  Push  URL: git+ssh://git@github.com/your_git_user/your_repo.git
+  HEAD branch: main
+  Remote branch:
+    main tracked
+  Local branch configured for 'git pull':
+    main merges with remote main
+  Local ref configured for 'git push':
+    main pushes to main (fast-forwardable)
+```
+If it shows the HTTP, then change it, using the command:
+``` 
+git remote set-url origin git+ssh://git@github.com/your_git_user/your_repo.git
+```
+Getting the SSH link from you Github repo under:
