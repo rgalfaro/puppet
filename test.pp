@@ -1,3 +1,0 @@
-package { 'nmap':
-  ensure => present,
-}
