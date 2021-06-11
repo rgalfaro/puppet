@@ -5,19 +5,33 @@ so a rename was needed in order to be able to sync between local repo and origin
 
 ### First thing first:
 #### Creating a local repository:
-1. Create a directory for your code, in this case _/home/vagrant/puppet/_  ``` mkdir ~/home/vagrant/puppet ```
-2. Move to that directory, ``cd /home/vagrant/puppet`` and run ``git init`` so a local repository will be created within that directory
-3. You can configure global paramtes for your local git using: 
-`` git config --global user.name "Your user name"
-git config --global user.email youremail@your.email.com``
+1. Create a directory for your code, in this case _/home/vagrant/puppet/_  
+```bash
+mkdir /home/vagrant/puppet 
+```
+2. Move to that directory  `cd /home/vagrant/puppet`
+
+3. Then run `git init` 
+
+So a local _Git_ repository will be created within that directory
+
+4. You can configure global paramtes for your local git using: 
+```git 
+git config --global user.name "Your user name"
+git config --global user.email youremail@your.email.com
+```
 
 Then you can create files in that directory. 
 
-4. To make _git_ keep track of all files within the directory, run ``git add .`` or ``git add  filename`` to keep track of a specific file.
-5. When making changes, to the file, you can check the status using ``git status`` and it will show you if there are changes that need to be commited.
-6. Use ``git commit [-m "Comment of this change/commit] filename"`` to commit your changes, check with ``git stauts`` for the commit to be OK and for the HEAD and main branches to be in Sync
-7. To add your remove repository as _origin_, run ``git remote add origin URL_OF_YOUR_GIT_REPO``
-8. Then you can push your files to the _remote origin_ (your repo), issuing: ``git push -u origin master``
+5. To make _git_ keep track of all files within the directory, run ``git add .`` or ``git add  filename`` to keep track of a specific file.
+
+6. When making changes, to the file, you can check the status using ``git status`` and it will show you if there are changes that need to be commited.
+
+7. Use ``git commit [-m "Comment of this change/commit] filename"`` to commit your changes, check with ``git stauts`` for the commit to be OK and for the HEAD and main branches to be in Sync
+
+8. To add your remove repository as _origin_, run ``git remote add origin URL_OF_YOUR_GIT_REPO``
+
+9. Then you can push your files to the _remote origin_ (your repo), issuing: ``git push -u origin master``
 
 #### Here comes the issue...
 As local _git_ uses _master_ as the main branch, and the _remote origin_ AKA your github.com repo uses _main_, you will get some errors, so you will need to change your local repo _master_ to _main_:
@@ -30,7 +44,7 @@ Then you are good to go, with no issue, to pull from _origin main_ branch to the
 
 ## From now on, lets say we get no issues... :smiley:
 
-# Adding SSH keys for not getting prompete every single time for user and password... 
+# Adding SSH keys for not getting prompted every single time for your github user and password... 
 
 1. You need to create public on the Vagrant server or whenever you are using your local repo with ``ssh-keygen``, check [Github - SSH Auth](https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent#about-ssh-key-generation) for more information...
 2. Then, add the public key to your github account under your profile...
