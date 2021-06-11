@@ -55,6 +55,6 @@ git remote set-url origin git+ssh://git@github.com/your_git_user/your_repo.git
 ```
 Getting the SSH link from you Github repo under:
 
-<img src=/images/githubssh.png>
-
-
+<p align="center">
+  <img align="center" src=/images/githubssh.png />
+</p>
