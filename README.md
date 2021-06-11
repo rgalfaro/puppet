@@ -54,3 +54,4 @@ If it shows the HTTP, then change it, using the command:
 git remote set-url origin git+ssh://git@github.com/your_git_user/your_repo.git
 ```
 Getting the SSH link from you Github repo under:
+![/images/githubssh.jpg]
