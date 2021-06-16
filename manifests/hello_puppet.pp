@@ -1,5 +1,5 @@
 file { '/tmp/hello.txt':
 	ensure => present,
-	content => "Hello, Worldly fucking world!\n",
+	content => Changing the content of file to test cron job!\n",
 
 }
