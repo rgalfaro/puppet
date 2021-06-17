@@ -75,12 +75,12 @@ Getting the SSH link from you Github repo under:
 
 ## Line endings in linux, when script do not run... 
 Reference: [Line endings in Linux](https://docs.github.com/en/github/getting-started-with-github/getting-started-with-git/configuring-git-to-handle-line-endings)
-#### Localy set the global variable `core.autocrlf`:
-Issue the following command:
+### Localy set the global variable `core.autocrlf`:
+Issue the following command within your local repo folder:
 ``git config --global core.autocrlf input``
 
 ### Per-repository setting:
-Optionally, you can configure a .gitattributes file to manage how Git reads line endings in a specific repository. When you commit this file to a repository, it overrides the core.autocrlf setting for all repository contributors. This ensures consistent behavior for all users, regardless of their Git settings and environment.
+Optionally, you can configure a _.gitattributes_ file to manage how Git reads line endings in a specific repository. When you commit this file to a repository, it overrides the core.autocrlf setting for all repository contributors. This ensures consistent behavior for all users, regardless of their Git settings and environment.
 
 The _.gitattributes_ file must be created in the root of the repository and committed like any other file.
 
@@ -91,9 +91,9 @@ On the right is the line ending configuration that Git should use for those file
 
 **Example** 
 
-Here's an example .gitattributes file. You can use it as a template for your repositories:
+Here's an example _.gitattributes_ file. You can use it as a template for your repositories:
 
-Use _lf_ for linux:
+Use **lf** for linux:
 
 ```
 # Set the default behavior, in case people don't have core.autocrlf set.
@@ -114,23 +114,23 @@ Use _lf_ for linux:
 Then **refresh** your repo:
 
 
-Save your current files in Git, so that none of your work is lost.
+1. Save your current files in Git, so that none of your work is lost.
 ``` 
 $ git add . -u 
 $ git commit -m "Saving files before refreshing line endings" 
 ```
 
-Add all your changed files back and normalize the line endings.
+2. Add all your changed files back and normalize the line endings.
 ```
 $ git add --renormalize .
 ```
 
-Show the rewritten, normalized files.
+3. Show the rewritten, normalized files.
 ```
 $ git status
 ``` 
 
-Commit the changes to your repository.
+4. Commit the changes to your repository.
 ```
 $ git commit -m "Normalize all the line endings"
 ```
