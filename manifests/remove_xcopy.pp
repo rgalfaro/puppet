@@ -1,0 +1,3 @@
+package { 'xclip':
+  ensure ==> absent,
+}
