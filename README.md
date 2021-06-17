@@ -72,3 +72,67 @@ Getting the SSH link from you Github repo under:
 <p align="center">
   <img align="center" src=/images/githubssh.png />
 </p>
+
+## Line endings in linux, when script do not run... 
+Reference: [Line endings in Linux](https://docs.github.com/en/github/getting-started-with-github/getting-started-with-git/configuring-git-to-handle-line-endings)
+#### Localy set the global variable `core.autocrlf`:
+Issue the following command:
+``git config --global core.autocrlf input``
+
+### Per-repository setting:
+Optionally, you can configure a .gitattributes file to manage how Git reads line endings in a specific repository. When you commit this file to a repository, it overrides the core.autocrlf setting for all repository contributors. This ensures consistent behavior for all users, regardless of their Git settings and environment.
+
+The _.gitattributes_ file must be created in the root of the repository and committed like any other file.
+
+A _.gitattributes_ file looks like a table with two columns:
+
+On the left is the file name for Git to match.
+On the right is the line ending configuration that Git should use for those files.
+
+**Example** 
+
+Here's an example .gitattributes file. You can use it as a template for your repositories:
+
+Use _lf_ for linux:
+
+```
+# Set the default behavior, in case people don't have core.autocrlf set.
+* text=lf
+
+# Explicitly declare text files you want to always be normalized and converted
+# to native line endings on checkout.
+*.c text
+*.h text
+
+# Declare files that will always have CRLF line endings on checkout.
+*.sln text eol=crlf
+
+# Denote all files that are truly binary and should not be modified.
+*.png binary
+*.jpg binary
+```
+Then **refresh** your repo:
+
+
+Save your current files in Git, so that none of your work is lost.
+``` 
+$ git add . -u 
+$ git commit -m "Saving files before refreshing line endings" 
+```
+
+Add all your changed files back and normalize the line endings.
+```
+$ git add --renormalize .
+```
+
+Show the rewritten, normalized files.
+```
+$ git status
+``` 
+
+Commit the changes to your repository.
+```
+$ git commit -m "Normalize all the line endings"
+```
+### Using dos2unix
+You can also use `dos2unix file_name` to convert EOL to Unix format for scripts. 
